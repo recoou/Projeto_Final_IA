@@ -9,9 +9,9 @@ import java.util.List;
 public class listaVariaveis {
 	
 	// Lista das variaveis de cada Caso
-	private List<Variavel> caso1;
-	private List<Variavel> caso2;
-	private List<Variavel> caso3;
+	private List<Tupla> caso1;
+	private List<Tupla> caso2;
+	private List<Tupla> caso3;
 	
 	// Criação das Listas.
 	public listaVariaveis(){
@@ -27,69 +27,69 @@ public class listaVariaveis {
 		this.caso3 = new ArrayList<>();
 		
 		// Variaveis de cada caso de teste.
-		String variavel1[] = {"COMP0455", "COMP0481", "COMP0408"};
-		String variavel2[] = {"COMP0409", "COMP0438", "COMP0412", "COMP0408", "COMP0461"};
-		String variavel3[] = {"COMP0417", "ELET0043", "MATE0096", "MATE0154", "ESTA0011", "COMP0409", "COMP0412", "COMP0415"};
+		String Tupla1[] = {"COMP0455", "COMP0481", "COMP0408"};
+		String Tupla2[] = {"COMP0409", "COMP0438", "COMP0412", "COMP0408", "COMP0461"};
+		String Tupla3[] = {"COMP0417", "ELET0043", "MATE0096", "MATE0154", "ESTA0011", "COMP0409", "COMP0412", "COMP0415"};
 		
 		//Lista das variaveis 1
-		Variavel variavel = new Variavel(variavel1[0],blocos[2]);
-		this.caso1.add(variavel);
-		variavel = new Variavel(variavel1[0],blocos[0]);
-		this.caso1.add(variavel);
-		variavel = new Variavel(variavel1[1],blocos[2]);
-		this.caso1.add(variavel);
-		variavel = new Variavel(variavel1[1],blocos[5]);
-		this.caso1.add(variavel);
-		variavel = new Variavel(variavel1[2],blocos[1]);
-		this.caso1.add(variavel);
-		variavel = new Variavel(variavel1[2],blocos[3]);
-		this.caso1.add(variavel);
+		Tupla Tupla = new Tupla(Tupla1[0],blocos[2]);
+		this.caso1.add(Tupla);
+		Tupla = new Tupla(Tupla1[0],blocos[0]);
+		this.caso1.add(Tupla);
+		Tupla = new Tupla(Tupla1[1],blocos[2]);
+		this.caso1.add(Tupla);
+		Tupla = new Tupla(Tupla1[1],blocos[5]);
+		this.caso1.add(Tupla);
+		Tupla = new Tupla(Tupla1[2],blocos[1]);
+		this.caso1.add(Tupla);
+		Tupla = new Tupla(Tupla1[2],blocos[3]);
+		this.caso1.add(Tupla);
 		
 		
 		//Lista das variaveis 2
 		
-		variavel = new Variavel(variavel2[0],blocos[0]);
-		this.caso2.add(variavel);
-		variavel = new Variavel(variavel2[0],blocos[2]);
-		this.caso2.add(variavel);
-		variavel = new Variavel(variavel2[1],blocos[1]);
-		this.caso2.add(variavel);
-		variavel = new Variavel(variavel2[1],blocos[0]);
-		this.caso2.add(variavel);
-		variavel = new Variavel(variavel2[2],blocos[2]);
-		this.caso2.add(variavel);
-		variavel = new Variavel(variavel2[3],blocos[0]);
-		this.caso2.add(variavel);
-		variavel = new Variavel(variavel2[4],blocos[1]);
-		this.caso2.add(variavel);
+		Tupla = new Tupla(Tupla2[0],blocos[0]);
+		this.caso2.add(Tupla);
+		Tupla = new Tupla(Tupla2[0],blocos[2]);
+		this.caso2.add(Tupla);
+		Tupla = new Tupla(Tupla2[1],blocos[1]);
+		this.caso2.add(Tupla);
+		Tupla = new Tupla(Tupla2[1],blocos[0]);
+		this.caso2.add(Tupla);
+		Tupla = new Tupla(Tupla2[2],blocos[2]);
+		this.caso2.add(Tupla);
+		Tupla = new Tupla(Tupla2[3],blocos[0]);
+		this.caso2.add(Tupla);
+		Tupla = new Tupla(Tupla2[4],blocos[1]);
+		this.caso2.add(Tupla);
 		
 		//Lista das variaveis 3
-		variavel = new Variavel(variavel3[0],blocos[4]);
-		this.caso3.add(variavel);
-		variavel = new Variavel(variavel3[0],blocos[2]);
-		this.caso3.add(variavel);
-		variavel = new Variavel(variavel3[1],blocos[3]);
-		this.caso3.add(variavel);
-		variavel = new Variavel(variavel3[1],blocos[0]);
-		this.caso3.add(variavel);
-		variavel = new Variavel(variavel3[2],blocos[1]);
-		this.caso3.add(variavel);
-		variavel = new Variavel(variavel3[3],blocos[0]);
-		this.caso3.add(variavel);
-		variavel = new Variavel(variavel3[4],blocos[4]);
-		this.caso3.add(variavel);
-		variavel = new Variavel(variavel3[4],blocos[1]);
-		this.caso3.add(variavel);
-		variavel = new Variavel(variavel3[5],blocos[2]);
-		this.caso3.add(variavel);
-		variavel = new Variavel(variavel3[6],blocos[0]);
-		this.caso3.add(variavel);
-		variavel = new Variavel(variavel3[6],blocos[1]);
-		this.caso3.add(variavel);
-		variavel = new Variavel(variavel3[7],blocos[2]);
-		this.caso3.add(variavel);
-		variavel = new Variavel(variavel3[7],blocos[1]);
-		this.caso3.add(variavel);
+		Tupla = new Tupla(Tupla3[0],blocos[4]);
+		this.caso3.add(Tupla);
+		Tupla = new Tupla(Tupla3[0],blocos[2]);
+		this.caso3.add(Tupla);
+		Tupla = new Tupla(Tupla3[1],blocos[3]);
+		this.caso3.add(Tupla);
+		Tupla = new Tupla(Tupla3[1],blocos[0]);
+		this.caso3.add(Tupla);
+		Tupla = new Tupla(Tupla3[2],blocos[1]);
+		this.caso3.add(Tupla);
+		Tupla = new Tupla(Tupla3[3],blocos[0]);
+		this.caso3.add(Tupla);
+		Tupla = new Tupla(Tupla3[4],blocos[4]);
+		this.caso3.add(Tupla);
+		Tupla = new Tupla(Tupla3[4],blocos[1]);
+		this.caso3.add(Tupla);
+		Tupla = new Tupla(Tupla3[5],blocos[2]);
+		this.caso3.add(Tupla);
+		Tupla = new Tupla(Tupla3[6],blocos[0]);
+		this.caso3.add(Tupla);
+		Tupla = new Tupla(Tupla3[6],blocos[1]);
+		this.caso3.add(Tupla);
+		Tupla = new Tupla(Tupla3[7],blocos[2]);
+		this.caso3.add(Tupla);
+		Tupla = new Tupla(Tupla3[7],blocos[1]);
+		this.caso3.add(Tupla);
 		
 
 
@@ -97,14 +97,14 @@ public class listaVariaveis {
 	
 	
 	//Gets da lista de cada caso de teste.
-	public List<Variavel> getCaso1() {
+	public List<Tupla> getCaso1() {
 		return Collections.unmodifiableList(caso1);
 	}
-	public List<Variavel> getCaso2() {
+	public List<Tupla> getCaso2() {
 		return Collections.unmodifiableList(caso2);
 	}
 	
-	public List<Variavel> getCaso3() {
+	public List<Tupla> getCaso3() {
 		return Collections.unmodifiableList(caso3);
 	}
 

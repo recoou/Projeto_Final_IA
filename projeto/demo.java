@@ -21,17 +21,21 @@ public class demo {
 		Pair<ArrayList<Double>, ArrayList<ArrayList<Double>>> horasTotais = teste2.horasTotaisSS();
 		System.out.println(horasTotais);
 		
+	
+		
 		listaVariaveis lista = new listaVariaveis();
 		
-		List<Variavel> list1 = lista.getCaso1();
-		List<Variavel> list2 = lista.getCaso2();
-		List<Variavel> list3 = lista.getCaso3();
+		List<Tupla> list1 = lista.getCaso1();
+		List<Tupla> list2 = lista.getCaso2();
+		List<Tupla> list3 = lista.getCaso3();
+		
+		
 		String es = "";
 		for (int i = 0; i < list1.size(); i++) {
 			es += '[';
-			es += list1.get(i).getNome();
+			es += list1.get(i).getFirst();
 			es += '|';
-			es += list1.get(i).getBloco();
+			es += list1.get(i).getSecond();
 			es += ']';
             }
 		
@@ -39,9 +43,9 @@ public class demo {
 		
 		for (int i = 0; i < list2.size(); i++) {
 			es += '[';
-			es += list2.get(i).getNome();
+			es += list2.get(i).getFirst();
 			es += '|';
-			es += list2.get(i).getBloco();
+			es += list2.get(i).getSecond();
 			es += ']';
 		    }
 		
@@ -49,9 +53,9 @@ public class demo {
 		
 		for (int i = 0; i < list3.size(); i++) {
 			es += '[';
-			es += list3.get(i).getNome();
+			es += list3.get(i).getFirst();
 			es += '|';
-			es += list3.get(i).getBloco();
+			es += list3.get(i).getSecond();
 			es += ']';
 		    }
 		
