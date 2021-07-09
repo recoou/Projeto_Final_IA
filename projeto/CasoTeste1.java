@@ -21,28 +21,28 @@ public class CasoTeste1 {
 		
 		//Trabalho = 22h
 		
-		horario[0][0].setMateria(0, "TRABALHO");
-		horario[1][0].setMateria(0, "TRABALHO");
-		horario[2][0].setMateria(0, "TRABALHO");
-		horario[3][0].setMateria(0, "TRABALHO");
-		horario[4][0].setMateria(0, "TRABALHO");
-		horario[5][0].setMateria(0, "TRABALHO");
-		horario[6][0].setMateria(0, "TRABALHO");
-		horario[0][2].setMateria(0, "TRABALHO");
-		horario[1][2].setMateria(0, "TRABALHO");
-		horario[2][2].setMateria(0, "TRABALHO");
-		horario[3][2].setMateria(0, "TRABALHO");
-		horario[4][2].setMateria(0, "TRABALHO");
-		horario[5][2].setMateria(0, "TRABALHO");
-		horario[6][2].setMateria(0, "TRABALHO");
-		horario[0][4].setMateria(0, "TRABALHO");
-		horario[1][4].setMateria(0, "TRABALHO");
-		horario[2][4].setMateria(0, "TRABALHO");
-		horario[3][4].setMateria(0, "TRABALHO");
-		horario[4][4].setMateria(0, "TRABALHO");
-		horario[5][4].setMateria(0, "TRABALHO");
-		horario[6][4].setMateria(0, "TRABALHO");
-		horario[7][4].setMateria(0, "TRABALHO");
+		horario[0][0].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[1][0].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[2][0].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[3][0].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[4][0].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[5][0].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[6][0].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[0][2].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[1][2].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[2][2].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[3][2].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[4][2].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[5][2].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[6][2].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[0][4].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[1][4].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[2][4].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[3][4].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[4][4].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[5][4].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[6][4].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
+		horario[7][4].setMateria(0, Cores.ANSI_GREEN + "TRABALHO" + Cores.ANSI_RESET);
 		
 		horario[0][0].setHoras(0);
 		horario[1][0].setHoras(0);
@@ -158,6 +158,11 @@ public class CasoTeste1 {
 	        }
 
 	    return es;
+	}
+	
+	
+	public void setMateria(int linha, int  coluna, String nome, int posicao) {
+		horario[linha][coluna].setMateria(posicao, nome);
 	}
 	
 	// Retorna as horas vagas de cada dia da semana

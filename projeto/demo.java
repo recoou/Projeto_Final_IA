@@ -16,10 +16,12 @@ public class demo {
 		//x[1][1].setMateria(1, "andre");
 		//System.out.println(x[1][1].MateriaToString());
 		
-		System.out.println(teste2.resultadoString());
+		System.out.println(teste3.resultadoString());
 		System.out.println(teste2);
-		Pair<ArrayList<Double>, ArrayList<ArrayList<Double>>> horasTotais = teste2.horasTotaisSS();
-		System.out.println(horasTotais);
+		Pair<ArrayList<Double>, ArrayList<ArrayList<Double>>> horasTotaiseHorasBlocosPorDia = teste2.horasTotaisSS();
+		System.out.println(horasTotaiseHorasBlocosPorDia);
+		double sexta = horasTotaiseHorasBlocosPorDia.getFirst().get(0);
+		System.out.println(sexta);
 		
 	
 		
