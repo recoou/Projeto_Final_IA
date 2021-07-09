@@ -11,7 +11,7 @@ import java.util.List;
 public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 	
 	
-	public WeeklyMapCSP(ArrayList<Tupla> blocos, Horario[][] MatrixHorario, int horasTotais) {
+	public WeeklyMapCSP(ArrayList<Tupla> blocos, Horario[][] MatrixHorario) throws OutOfTimeException{
 		//For para inclusão de variáveis na lista de Var
 		int contador = 0;
 		for(int i = 0; i < blocos.size(); i++) {
@@ -30,9 +30,7 @@ public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 			contador++;
 		}
 		
-		//Criação do domínio
-		
-		
+		//Criação do domínio	
 		
 		ArrayList<TuplaIntInt> dominio = new ArrayList<TuplaIntInt>();
 		
@@ -41,6 +39,18 @@ public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 				if(MatrixHorario[j][i].getHoras() != 0) {//Verifica se tem horas vagas
 					dominio.add(new TuplaIntInt((2*j),i));
 					dominio.add(new TuplaIntInt((2*j) + 1,i));
+				}
+			}
+			
+			//Restrição do Sábado
+			if(i == 5) {
+				if(getVariables().size() <= dominio.size()) {
+					break;
+				}
+				else {
+					if(getVariables().size() > (dominio.size() +20)){//Se o tempo pedido é grande demais..
+						throw new OutOfTimeException("O tempo pedido é maior do que o disponível");//Dá erro com essa mensagem
+					}
 				}
 			}
 		}
@@ -63,4 +73,5 @@ public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 		}
 	}
 }
+	
 
