@@ -9,9 +9,9 @@ import java.util.List;
 public class listaVariaveis {
 	
 	// Lista das variaveis de cada Caso
-	private List<Tupla> caso1;
-	private List<Tupla> caso2;
-	private List<Tupla> caso3;
+	private ArrayList<Tupla> caso1;
+	private ArrayList<Tupla> caso2;
+	private ArrayList<Tupla> caso3;
 	
 	// Criação das Listas.
 	public listaVariaveis(){
@@ -97,15 +97,15 @@ public class listaVariaveis {
 	
 	
 	//Gets da lista de cada caso de teste.
-	public List<Tupla> getCaso1() {
-		return Collections.unmodifiableList(caso1);
+	public ArrayList<Tupla> getCaso1() {
+		return caso1;//Collections.unmodifiableList(caso1);
 	}
-	public List<Tupla> getCaso2() {
-		return Collections.unmodifiableList(caso2);
+	public ArrayList<Tupla> getCaso2() {
+		return caso2;//Collections.unmodifiableList(caso2);
 	}
 	
-	public List<Tupla> getCaso3() {
-		return Collections.unmodifiableList(caso3);
+	public ArrayList<Tupla> getCaso3() {
+		return caso3;//Collections.unmodifiableList(caso3);
 	}
 
 }

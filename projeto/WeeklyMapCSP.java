@@ -19,7 +19,7 @@ public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 				addVariable(new Variable(blocos.get(i).getFirst() + (i+1) + j));
 			
 			//Adicionando Restrições TableSpace e SameColumn
-			for(int c=contador; c<getVariables().size(); c++) {
+			for(int c=contador; c<getVariables().size()-1; c++) {
 				Variable var1 = getVariables().get(c);
 				Variable var2 = getVariables().get(c+1);
 				addConstraint(new TableSpaceConstraint(var1, var2));

@@ -19,7 +19,9 @@ public class demo {
 		System.out.println(teste2.resultadoString());
 		System.out.println(teste2);
 		Pair<ArrayList<Double>, ArrayList<ArrayList<Double>>> horasTotais = teste2.horasTotaisSS();
-		System.out.println(horasTotais);
+		System.out.println(horasTotais.getSecond());
+		double sexta = horasTotais.getFirst().get(0);
+		System.out.println(sexta);
 		
 	
 		
