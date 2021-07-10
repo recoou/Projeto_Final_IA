@@ -32,11 +32,12 @@ public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 			contador++;
 		}
 		
-		//Criação do domínio
+		//Restriçao do Sábado
 		ArrayList<Double> horasVagas = new ArrayList<Double>();
 		for (int i = 0; i <horasLivres.getSecond().size(); i ++) {
 			horasVagas.addAll(horasLivres.getSecond().get(i));
 		}
+		
 		Collections.sort(horasVagas);
 			
 		boolean sabado = false;
@@ -57,7 +58,7 @@ public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 			
 		}		
 		
-		
+		//Criação do dominio
 		ArrayList<TuplaIntInt> dominio = new ArrayList<TuplaIntInt>();
 		int dias;
 		if (sabado)  dias = 6;
@@ -73,14 +74,17 @@ public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 			}
 			
 			//Restrição do Sábado
-			if(i == 5) {
-				if(getVariables().size() <= dominio.size()) {
-					break;
+			/*
+			if(sabado) {
+				if(getVariables().size() > (dominio.size() +20)){//Se o tempo pedido é grande demais..
+					System.out.println("O PSR não possui solução alcançável");//Dá erro com essa mensagem
+					System.exit(1);
 				}
-				else {
-					if(getVariables().size() > (dominio.size() +20)){//Se o tempo pedido é grande demais..
-						throw new OutOfTimeException("O tempo pedido é maior do que o disponível");//Dá erro com essa mensagem
-					}
+			}
+			 */
+			if(i == 5) {
+				if(getVariables().size() > (dominio.size() +20)){//Se o tempo pedido é grande demais..
+					throw new OutOfTimeException("O tempo pedido é maior do que o disponível");//Dá erro com essa mensagem
 				}
 			}
 		}

@@ -6,13 +6,10 @@ import java.util.Optional;
 
 import aima.core.search.csp.Assignment;
 import aima.core.search.csp.CSP;
-import aima.core.search.csp.CspHeuristics;
-import aima.core.search.csp.CspListener;
-import aima.core.search.csp.CspSolver;
-import aima.core.search.csp.FlexibleBacktrackingSolver;
-import aima.core.search.csp.MinConflictsSolver;
+import aima.core.search.csp.solver.*;
 import aima.core.search.csp.Variable;
 import aima.core.util.datastructure.Pair;
+import java.util.NoSuchElementException;
 
 public class demoCase1 {
 	
@@ -33,18 +30,28 @@ public class demoCase1 {
 		
 		
 		CSP<Variable, TuplaIntInt> csp = new WeeklyMapCSP(list3, horario, horasLivres);
+		
 		CspListener.StepCounter<Variable, TuplaIntInt> stepCounter = new CspListener.StepCounter<>();
 		CspSolver<Variable, TuplaIntInt> solver;
 		Optional<Assignment<Variable, TuplaIntInt>> solution;
 		
+		//solver = new MinConflictsSolver<>(4000);
 		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().setAll();
+		//solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(CspHeuristics.mrvDeg());
+		//solver = new FlexibleBacktrackingSolver<>();
 		solver.addCspListener(stepCounter);
 		stepCounter.reset();
 		System.out.println("Map Coloring (Minimum Conflicts)");
 		solution = solver.solve(csp);
 		solution.ifPresent(System.out::println);
+		try {
+			Assignment<Variable, TuplaIntInt> solucao = solution.get();
+		}
+		catch(NoSuchElementException e){
+			System.out.println("O PSR não possui solução");
+			System.exit(1);
+		}
 		Assignment<Variable, TuplaIntInt> solucao = solution.get();
-		
 		List<Variable> variaveis = solucao.getVariables();
 		for(Variable var : variaveis) {
 			int linha = solucao.getValue(var).getLinha();
