@@ -21,7 +21,7 @@ public class demoCase1 {
 		CasoTeste2 teste2 = new CasoTeste2();
 		CasoTeste3 teste3 = new CasoTeste3();
 		
-		Pair<ArrayList<Double>, ArrayList<ArrayList<Double>>> horasTotais = teste1.horasTotaisSS();
+		Pair<ArrayList<Double>, ArrayList<ArrayList<Double>>> horasLivres = teste3.horasTotaisSS();
 		
 		listaVariaveis lista = new listaVariaveis();
 		
@@ -29,10 +29,10 @@ public class demoCase1 {
 		ArrayList<Tupla> list2 =  lista.getCaso2();
 		ArrayList<Tupla> list3 =  lista.getCaso3();
 		
-		Horario[][] horario1 = teste1.getHorario();
+		Horario[][] horario = teste3.getHorario();
 		
 		
-		CSP<Variable, TuplaIntInt> csp = new WeeklyMapCSP(list1, teste1.getHorario());
+		CSP<Variable, TuplaIntInt> csp = new WeeklyMapCSP(list3, horario, horasLivres);
 		CspListener.StepCounter<Variable, TuplaIntInt> stepCounter = new CspListener.StepCounter<>();
 		CspSolver<Variable, TuplaIntInt> solver;
 		Optional<Assignment<Variable, TuplaIntInt>> solution;
@@ -49,7 +49,7 @@ public class demoCase1 {
 		for(Variable var : variaveis) {
 			int linha = solucao.getValue(var).getLinha();
 			int coluna = solucao.getValue(var).getColuna();
-			teste1.setMateria((int)linha/2, coluna, Cores.ANSI_PURPLE + var.getName().substring(0, 8) + Cores.ANSI_RESET, linha%2);
+			teste3.setMateria((int)linha/2, coluna, Cores.ANSI_PURPLE + var.getName().substring(0, 8) + Cores.ANSI_RESET, linha%2);
 			//horario1[(int)linha/2][coluna].setMateria(linha%2, var.getName());
 			}
 				
@@ -57,7 +57,7 @@ public class demoCase1 {
 		System.out.println(stepCounter.getResults() + "\n");
 		
 		
-		System.out.println(teste1.resultadoString());
+		System.out.println(teste3.resultadoString());
 		//System.out.println(resultadoString(horario1));
 
 	}

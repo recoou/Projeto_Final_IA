@@ -95,10 +95,10 @@ public class CasoTeste3 {
 		horario[5][4].setHoras(0);
 		
 		//PALESTRA
-		horario[6][4].setMateria(0, "PALESTRA");
-		horario[7][4].setMateria(0, "PALESTRA");
-		horario[6][1].setMateria(0, "PALESTRA");
-		horario[7][1].setMateria(0, "PALESTRA");
+		horario[6][4].setMateria(0, Cores.ANSI_GREEN + "PALESTRA" + Cores.ANSI_RESET);
+		horario[7][4].setMateria(0, Cores.ANSI_GREEN + "PALESTRA" + Cores.ANSI_RESET);
+		horario[6][1].setMateria(0, Cores.ANSI_GREEN + "PALESTRA" + Cores.ANSI_RESET);
+		horario[7][1].setMateria(0, Cores.ANSI_GREEN + "PALESTRA" + Cores.ANSI_RESET);
 		
 		horario[6][1].setHoras(0);
 		horario[7][1].setHoras(0);
@@ -111,6 +111,10 @@ public class CasoTeste3 {
 	// Get da Matrix
 	public Horario[][] getHorario() {
 		return this.horario;
+	}
+	
+	public void setMateria(int linha, int  coluna, String nome, int posicao) {
+		horario[linha][coluna].setMateria(posicao, nome);
 	}
 	
 	// Transforma a Matrix para string

@@ -6,16 +6,6 @@ import aima.core.util.datastructure.Pair;
 
 public class CasoTeste2 {
 	
-	public static final String ANSI_RESET = "\u001B[0m";
-	public static final String ANSI_BLACK = "\u001B[30m";
-	public static final String ANSI_RED = "\u001B[31m";
-	public static final String ANSI_GREEN = "\u001B[32m";
-	public static final String ANSI_YELLOW = "\u001B[33m";
-	public static final String ANSI_BLUE = "\u001B[34m";
-	public static final String ANSI_PURPLE = "\u001B[35m";
-	public static final String ANSI_CYAN = "\u001B[36m";
-	public static final String ANSI_WHITE = "\u001B[37m";
-	
 	//matrix do Caso de teste 2
 	// e a lista de variaveis.
 	private final Horario[][] horario= new Horario[10][6];
@@ -67,26 +57,26 @@ public class CasoTeste2 {
 		horario[2][3].setHoras(0);
 		horario[3][3].setHoras(0);
 		
-		horario[2][0].setMateria(0, ANSI_GREEN+"PIBIC###"+ANSI_RESET);
-		horario[3][0].setMateria(0, ANSI_GREEN+"PIBIC###"+ANSI_RESET);
-		horario[0][1].setMateria(0, ANSI_GREEN+"PIBIC###"+ANSI_RESET);
-		horario[1][1].setMateria(0, ANSI_GREEN+"PIBIC###"+ANSI_RESET);
-		horario[4][1].setMateria(0, "ANSI_GREENPIBIC###ANSI_RESET");
-		horario[5][1].setMateria(0, "ANSI_GREENPIBIC###ANSI_RESET");
-		horario[6][1].setMateria(0, "ANSI_GREENPIBIC###ANSI_RESET");
-		horario[7][1].setMateria(0, "ANSI_GREENPIBIC###ANSI_RESET");
-		horario[2][2].setMateria(0, "ANSI_GREENPIBIC###ANSI_RESET");
-		horario[3][2].setMateria(0, "PIBIC###");
-		horario[0][3].setMateria(0, "PIBIC###");
-		horario[1][3].setMateria(0, "PIBIC###");
-		horario[4][3].setMateria(0, "PIBIC###");
-		horario[5][3].setMateria(0, "PIBIC###");
-		horario[6][3].setMateria(0, "PIBIC###");
-		horario[7][3].setMateria(0, "PIBIC###");
-		horario[4][4].setMateria(0, "PIBIC###");
-		horario[5][4].setMateria(0, "PIBIC###");
-		horario[6][4].setMateria(0, "PIBIC###");
-		horario[7][4].setMateria(0, "PIBIC###");
+		horario[2][0].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[3][0].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[0][1].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[1][1].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[4][1].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[5][1].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[6][1].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[7][1].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[2][2].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[3][2].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[0][3].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[1][3].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[4][3].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[5][3].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[6][3].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[7][3].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[4][4].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[5][4].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[6][4].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
+		horario[7][4].setMateria(0, Cores.ANSI_GREEN + "PIBIC###" + Cores.ANSI_RESET);
 		
 		horario[2][0].setHoras(0);
 		horario[3][0].setHoras(0);
@@ -139,6 +129,10 @@ public class CasoTeste2 {
 	// Get da Matrix
 	public Horario[][] getHorario() {
 		return this.horario;
+	}
+	
+	public void setMateria(int linha, int  coluna, String nome, int posicao) {
+		horario[linha][coluna].setMateria(posicao, nome);
 	}
 	
 	

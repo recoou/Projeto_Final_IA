@@ -16,8 +16,8 @@ public class demo {
 		//x[1][1].setMateria(1, "andre");
 		//System.out.println(x[1][1].MateriaToString());
 		
-		System.out.println(teste3.resultadoString());
-		System.out.println(teste2);
+		System.out.println(teste1.resultadoString());
+		System.out.println(teste1);
 		Pair<ArrayList<Double>, ArrayList<ArrayList<Double>>> horasTotaiseHorasBlocosPorDia = teste2.horasTotaisSS();
 		System.out.println(horasTotaiseHorasBlocosPorDia);
 		double sexta = horasTotaiseHorasBlocosPorDia.getFirst().get(0);

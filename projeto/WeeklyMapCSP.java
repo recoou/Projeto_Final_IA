@@ -4,14 +4,16 @@ import aima.core.search.csp.CSP;
 import aima.core.search.csp.Domain;
 import aima.core.search.csp.Variable;
 import aima.core.search.csp.examples.NotEqualConstraint;
+import aima.core.util.datastructure.Pair;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 	
 	
-	public WeeklyMapCSP(ArrayList<Tupla> blocos, Horario[][] MatrixHorario) throws OutOfTimeException{
+	public WeeklyMapCSP(ArrayList<Tupla> blocos, Horario[][] MatrixHorario, Pair<ArrayList<Double>, ArrayList<ArrayList<Double>>> horasLivres) throws OutOfTimeException{
 		//For para inclusão de variáveis na lista de Var
 		int contador = 0;
 		for(int i = 0; i < blocos.size(); i++) {
@@ -30,11 +32,39 @@ public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 			contador++;
 		}
 		
-		//Criação do domínio	
+		//Criação do domínio
+		ArrayList<Double> horasVagas = new ArrayList<Double>();
+		for (int i = 0; i <horasLivres.getSecond().size(); i ++) {
+			horasVagas.addAll(horasLivres.getSecond().get(i));
+		}
+		Collections.sort(horasVagas);
+			
+		boolean sabado = false;
+		for(int i = 0; i < blocos.size();i++) {
+			for (int j = 0; j < horasVagas.size(); j++) {
+				if (j == horasVagas.size()-1) {
+					sabado = true;
+					break;
+				}
+				double hNecessaria = blocos.get(i).getSecond()/2;
+				if (hNecessaria	 <= horasVagas.get(j)) {
+					horasVagas.set(j, horasVagas.get(j) - hNecessaria);
+					Collections.sort(horasVagas);
+					break;
+				}
+			}
+			if (sabado) break;
+			
+		}		
+		
 		
 		ArrayList<TuplaIntInt> dominio = new ArrayList<TuplaIntInt>();
+		int dias;
+		if (sabado)  dias = 6;
+			
+		else  dias = 5;
 		
-		for(int i=0; i<6; i++) {
+		for(int i=0; i<dias; i++) {
 			for(int j=0; j<10; j++) {
 				if(MatrixHorario[j][i].getHoras() != 0) {//Verifica se tem horas vagas
 					dominio.add(new TuplaIntInt((2*j),i));
