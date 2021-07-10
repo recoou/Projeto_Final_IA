@@ -1,8 +1,6 @@
 package aima.core.search.csp.projeto;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 //Cria a lista de variaveis para cada caso
 //com valores fixos.

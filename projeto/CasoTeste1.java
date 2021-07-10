@@ -1,7 +1,7 @@
 package aima.core.search.csp.projeto;
 
 import java.util.ArrayList;
-import aima.core.util.datastructure.Pair;
+import java.util.Collections;
 
 public class CasoTeste1 {
 	
@@ -156,7 +156,9 @@ public class CasoTeste1 {
 	                }
 	            es += '\n';
 	        }
-
+	    
+	    System.out.println();
+	    System.out.println("Seu Horário é: ");
 	    return es;
 	}
 	
@@ -167,15 +169,14 @@ public class CasoTeste1 {
 	
 	// Retorna as horas vagas de cada dia da semana
 	// Segunda até Sábado
-	private ArrayList<ArrayList<Double>> horasVagas() {
+	public ArrayList<Double> horasVagas() {
 		
-		ArrayList<ArrayList<Double>> vagas = new ArrayList<ArrayList<Double>>(6);
+		ArrayList<Double> vagas = new ArrayList<Double>();
 		
 		double vago = 0;
 		
 		for(int i = 0; i < 6; i++)
         {
-			ArrayList<Double> d1 = new ArrayList<Double>();
             for(int j = 0; j < 10; j++)
                 {
             		
@@ -183,34 +184,15 @@ public class CasoTeste1 {
                     	vago ++;
                     }else {
                     	vago += horario[j][i].getHoras();
-                    	if(vago > 0)    d1.add(vago);
+                    	if(vago > 0)    vagas.add(vago);
                     	vago = 0;
                     }
                 }
-            if(vago > 0)    d1.add(vago);
+            if(vago > 0)    vagas.add(vago);
             vago = 0;
-            vagas.add(d1);
         }
+		Collections.sort(vagas);
 		return vagas;
 	}
 	
-	// Retorna um par com o total de horas vagas
-	// Até a sexta feira e até ao Sabado
-	public Pair<ArrayList<Double>, ArrayList<ArrayList<Double>>> horasTotaisSS() {
-		ArrayList<Double> total = new ArrayList<Double>(2);
-		
-		ArrayList<ArrayList<Double>> horasV = this.horasVagas();
-		double horas = 0;
-		for (int i = 0; i < horasV.size(); i++) {
-            for (int j = 0; j < horasV.get(i).size(); j++) {
-               horas += horasV.get(i).get(j);
-            }
-            if (i >= 4){
-            	total.add(horas);
-            }
-            
-        }
-		
-		return new Pair<ArrayList<Double>, ArrayList<ArrayList<Double>>>(total,horasV);
-	}
 }

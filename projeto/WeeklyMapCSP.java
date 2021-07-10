@@ -4,16 +4,14 @@ import aima.core.search.csp.CSP;
 import aima.core.search.csp.Domain;
 import aima.core.search.csp.Variable;
 import aima.core.search.csp.examples.NotEqualConstraint;
-import aima.core.util.datastructure.Pair;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 	
 	
-	public WeeklyMapCSP(ArrayList<Tupla> blocos, Horario[][] MatrixHorario, Pair<ArrayList<Double>, ArrayList<ArrayList<Double>>> horasLivres) throws OutOfTimeException{
+	public WeeklyMapCSP(ArrayList<Tupla> blocos, Horario[][] MatrixHorario, ArrayList<Double> horasVagas){
 		//For para inclusão de variáveis na lista de Var
 		int contador = 0;
 		for(int i = 0; i < blocos.size(); i++) {
@@ -32,36 +30,11 @@ public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 			contador++;
 		}
 		
-		//Restriçao do Sábado
-		ArrayList<Double> horasVagas = new ArrayList<Double>();
-		for (int i = 0; i <horasLivres.getSecond().size(); i ++) {
-			horasVagas.addAll(horasLivres.getSecond().get(i));
-		}
-		
-		Collections.sort(horasVagas);
-			
-		boolean sabado = false;
-		for(int i = 0; i < blocos.size();i++) {
-			for (int j = 0; j < horasVagas.size(); j++) {
-				if (j == horasVagas.size()-1) {
-					sabado = true;
-					break;
-				}
-				double hNecessaria = blocos.get(i).getSecond()/2;
-				if (hNecessaria	 <= horasVagas.get(j)) {
-					horasVagas.set(j, horasVagas.get(j) - hNecessaria);
-					Collections.sort(horasVagas);
-					break;
-				}
-			}
-			if (sabado) break;
-			
-		}		
-		
+		//Restriçao do Sábado	
 		//Criação do dominio
 		ArrayList<TuplaIntInt> dominio = new ArrayList<TuplaIntInt>();
 		int dias;
-		if (sabado)  dias = 6;
+		if (SabadoIsNeeded(blocos,horasVagas))  dias = 6;
 			
 		else  dias = 5;
 		
@@ -70,21 +43,6 @@ public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 				if(MatrixHorario[j][i].getHoras() != 0) {//Verifica se tem horas vagas
 					dominio.add(new TuplaIntInt((2*j),i));
 					dominio.add(new TuplaIntInt((2*j) + 1,i));
-				}
-			}
-			
-			//Restrição do Sábado
-			/*
-			if(sabado) {
-				if(getVariables().size() > (dominio.size() +20)){//Se o tempo pedido é grande demais..
-					System.out.println("O PSR não possui solução alcançável");//Dá erro com essa mensagem
-					System.exit(1);
-				}
-			}
-			 */
-			if(i == 5) {
-				if(getVariables().size() > (dominio.size() +20)){//Se o tempo pedido é grande demais..
-					throw new OutOfTimeException("O tempo pedido é maior do que o disponível");//Dá erro com essa mensagem
 				}
 			}
 		}
@@ -102,10 +60,32 @@ public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 			Variable var1 = getVariables().get(i);
 			for (int j = i+1; j < getVariables().size(); j++) {
 				Variable var2 = getVariables().get(j);
-				addConstraint(new NotEqualConstraint(var1, var2));
+				addConstraint(new NotEqualConstraint<Variable, TuplaIntInt>(var1, var2));
 			}
 		}
 	}
+	
+	private boolean SabadoIsNeeded(ArrayList<Tupla> blocos, ArrayList<Double> horasVagas) {
+			
+		boolean sabado = false;
+		
+		for(int i = 0; i < blocos.size();i++) {
+			for (int j = 0; j < horasVagas.size(); j++) {
+				if (j == horasVagas.size()-1) {
+					sabado = true;
+					return sabado;
+				}
+				double hNecessaria = blocos.get(i).getSecond()/2;
+				if (hNecessaria	 <= horasVagas.get(j)) {
+					horasVagas.set(j, horasVagas.get(j) - hNecessaria);
+					Collections.sort(horasVagas);
+					break;
+				}
+			}
+		}
+		return sabado;
+	}
 }
+
 	
 

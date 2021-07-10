@@ -29,6 +29,7 @@ public class Horario {
 	    for (int i = 0; i< 2; i++) {
 	    	if (materia[i] != null) {
 	    		if (i != 0) {
+	    			if (materia[i].substring(0,7) == materia[i-1].substring(0,7));
 	    			es += "|";
 	    		}
 	    		es += materia[i];
