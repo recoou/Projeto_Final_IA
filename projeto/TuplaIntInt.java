@@ -1,5 +1,10 @@
 package aima.core.search.csp.projeto;
 
+/*
+ * Classe de Suporte que guarda dois valores
+ * sendo tanto o primeiro como o segundo inteiros
+ */
+
 public class TuplaIntInt {
 	private final int linha;
 	private final int coluna;

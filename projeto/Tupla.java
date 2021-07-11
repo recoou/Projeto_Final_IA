@@ -1,5 +1,10 @@
 package aima.core.search.csp.projeto;
 
+/*
+ * Classe de Suporte que guarda dois valores
+ * sendo o primeiro uma String e o segundo um inteiro
+ */
+
 public class Tupla {
 	private String first;
 	private int second;
