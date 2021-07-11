@@ -1,8 +1,13 @@
 package aima.core.search.csp.projeto;
 
+/*
+ * Classe de suporte que cria uma representação da posição 
+ * da tabela de horário
+ */
+
 public class Horario {
-	private double horas;
-	private final String[] materia =  new String[2];
+	private double horas;//Tempo disponível no dia
+	private final String[] materia =  new String[2];//Matérias que ocupam aquele horário
 	
 	public Horario(double horas) {
 		this.horas = horas;
@@ -12,26 +17,20 @@ public class Horario {
 	public void setMateria(int i, String materia) {
 		this.materia[i] = materia;
 	}
-	//Retorna as horas restantes do horário
+	
 	public double getHoras() {
 		return horas;
 	}
-	
-	//retorna a pimeira matéria do horário
 	public String getMateria() {
 		return materia[0];
 		
 	}
-	
-	// Atribui a quantidade de horas
-	// disponiveis no horario
 	public void setHoras(double d) {
 			this.horas = d;
 	}
 	
-	//Retorna as materias
-	// em formato de string
-	public String toString() {
+	//To string que retorna as matérias daquele horário como String
+	public String MateriaToString() {
 	    String es = new String();
 	    for (int i = 0; i< 2; i++) {
 	    	if (materia[i] != null) {
