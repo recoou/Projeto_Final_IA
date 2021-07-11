@@ -54,7 +54,7 @@ public class demo {
 			for(Variable var : variaveis) {
 				int linha = solucao.getValue(var).getLinha();
 				int coluna = solucao.getValue(var).getColuna();
-				teste2.setMateria((int)linha/2, coluna, Cores.ANSI_PURPLE + var.getName().substring(0, 8) + Cores.ANSI_RESET, linha%2);
+				teste2.setMateria((int)linha/2, coluna, Cores.ANSI_BLUE + var.getName().substring(0, 8) + Cores.ANSI_RESET, linha%2);
 				}
 			System.out.println(teste2);
 		}
