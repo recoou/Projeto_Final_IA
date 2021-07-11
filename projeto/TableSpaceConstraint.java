@@ -1,8 +1,8 @@
 package aima.core.search.csp.projeto;
 
 /*
- * Restrição de que duas variáveis do mesmo bloco seguidas
- * devem
+ * Classe de Restrição que impõe de que duas variáveis do mesmo bloco 
+ * devem aparecer na sequência correta
  */
 
 import java.util.ArrayList;

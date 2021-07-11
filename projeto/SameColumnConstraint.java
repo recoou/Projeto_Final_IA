@@ -1,7 +1,7 @@
 package aima.core.search.csp.projeto;
 
 /*
- * Restrição que duas variáveis do mesmo bloco
+ * Classe de Restrição que impõe que duas variáveis do mesmo bloco
  * devem ter a mesma coluna
  */
 
