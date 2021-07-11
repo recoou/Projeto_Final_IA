@@ -1,13 +1,12 @@
 package aima.core.search.csp.projeto;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /*
  * Classe de Suporte para criação do Caso 3 exemplificado
  * pelo professor.
  */
-
-import java.util.ArrayList;
-import java.util.Collections;
-
 
 public class CasoTeste3 {
 

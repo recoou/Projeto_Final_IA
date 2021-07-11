@@ -1,9 +1,5 @@
 package aima.core.search.csp.projeto;
-/*
- * Classe principal, nela é criada o PSR, ou seja,
- * são definidas as variáveis, o domínio e as restrições para
- * cada variável.
- */
+
 import aima.core.search.csp.CSP;
 import aima.core.search.csp.Domain;
 import aima.core.search.csp.Variable;
@@ -11,6 +7,12 @@ import aima.core.search.csp.examples.NotEqualConstraint;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
+/*
+ * Classe principal, nela é criada o PSR, ou seja,
+ * são definidas as variáveis, o domínio e as restrições para
+ * cada variável.
+ */
 
 public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 	

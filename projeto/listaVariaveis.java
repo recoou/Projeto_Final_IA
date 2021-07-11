@@ -1,14 +1,13 @@
 package aima.core.search.csp.projeto;
 
-/*
- * Classe de Suporte para a criação da Lista de Blocos
- * de cada caso de teste definido pelo professor.
- */
-
 import java.util.ArrayList;
 
-//Cria a lista de variaveis para cada caso
-//com valores fixos.
+
+/*
+ * Classe de Suporte que cria 
+ * a lista de variaveis para cada caso
+ * com valores fixos.
+ */
 public class listaVariaveis {
 	
 	// Lista das variaveis de cada Caso

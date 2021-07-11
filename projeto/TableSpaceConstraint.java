@@ -1,16 +1,16 @@
 package aima.core.search.csp.projeto;
 
-/*
- * Classe de Restrição que impõe de que duas variáveis do mesmo bloco 
- * devem aparecer na sequência correta
- */
-
 import java.util.ArrayList;
 import java.util.List;
 
 import aima.core.search.csp.Assignment;
 import aima.core.search.csp.Constraint;
 import aima.core.search.csp.Variable;
+
+/*
+ * Classe de Restrição que impõe de que duas variáveis do mesmo bloco 
+ * devem aparecer na sequência correta
+ */
 
 public class TableSpaceConstraint implements Constraint<Variable, TuplaIntInt>{
 
