@@ -1,5 +1,10 @@
 package aima.core.search.csp.projeto;
 
+/*
+ * Classe de Suporte para a criação da Lista de Blocos
+ * de cada caso de teste definido pelo professor.
+ */
+
 import java.util.ArrayList;
 
 //Cria a lista de variaveis para cada caso
@@ -13,10 +18,11 @@ public class listaVariaveis {
 	
 	// Criação das Listas.
 	public listaVariaveis(){
-		
-		// Declaração dos valores possiveis para
-		// Os blocos e o tempo total de horas estudadas.
-		//double blocos[] = {0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0};
+		/*
+		 * Declaração dos valores possiveis para
+		 * Os blocos e o tempo total de horas estudadas.
+		 * double blocos[] = {0.5,1.0,1.5,2.0,2.5,3.0,3.5,4.0}; 
+		 */		
 		int blocos[] = {1,2,3,4,5,6,7,8};
 		
 		// Declaração das listas de variáveis.
