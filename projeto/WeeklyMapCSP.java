@@ -68,14 +68,15 @@ public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 	private boolean SabadoIsNeeded(ArrayList<Tupla> blocos, ArrayList<Double> horasVagas) {
 			
 		boolean sabado = false;
-		
 		for(int i = 0; i < blocos.size();i++) {
+			double hNecessaria = (double) blocos.get(i).getSecond()/2;
 			for (int j = 0; j < horasVagas.size(); j++) {
 				if (j == horasVagas.size()-1) {
 					sabado = true;
+					System.out.println(sabado);
 					return sabado;
 				}
-				double hNecessaria = blocos.get(i).getSecond()/2;
+				
 				if (hNecessaria	 <= horasVagas.get(j)) {
 					horasVagas.set(j, horasVagas.get(j) - hNecessaria);
 					Collections.sort(horasVagas);

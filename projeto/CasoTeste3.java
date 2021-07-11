@@ -20,26 +20,26 @@ public class CasoTeste3 {
 			}
 		}
 		//linha 1 2
-		horario[0][0].setMateria(0, "ELET0043");
-		horario[1][0].setMateria(0, "ELET0043");
+		horario[0][0].setMateria(0, Cores.ANSI_BLACK + "ELET0043"+ Cores.ANSI_RESET);
+		horario[1][0].setMateria(0, Cores.ANSI_BLACK + "ELET0043"+ Cores.ANSI_RESET);
 		
 		horario[0][0].setHoras(0);
 		horario[1][0].setHoras(0);
 		
-		horario[0][1].setMateria(0, "MATE0096");
-		horario[1][1].setMateria(0, "MATE0096");
-		horario[0][3].setMateria(0, "MATE0096");
-		horario[1][3].setMateria(0, "MATE0096");
+		horario[0][1].setMateria(0, Cores.ANSI_BLACK + "MATE0154"+ Cores.ANSI_RESET);
+		horario[1][1].setMateria(0, Cores.ANSI_BLACK + "MATE0154"+ Cores.ANSI_RESET);
+		horario[0][3].setMateria(0, Cores.ANSI_BLACK + "MATE0154"+ Cores.ANSI_RESET);
+		horario[1][3].setMateria(0, Cores.ANSI_BLACK + "MATE0154"+ Cores.ANSI_RESET);
 		
 		horario[0][1].setHoras(0);
 		horario[1][1].setHoras(0);
 		horario[0][3].setHoras(0);
 		horario[1][3].setHoras(0);
 		
-		horario[0][2].setMateria(0, "MATE0154");
-		horario[1][2].setMateria(0, "MATE0154");
-		horario[0][4].setMateria(0, "MATE0154");
-		horario[1][4].setMateria(0, "MATE0154");
+		horario[0][2].setMateria(0, Cores.ANSI_BLACK + "MATE0154"+ Cores.ANSI_RESET);
+		horario[1][2].setMateria(0, Cores.ANSI_BLACK + "MATE0154"+ Cores.ANSI_RESET);
+		horario[0][4].setMateria(0, Cores.ANSI_BLACK + "MATE0154"+ Cores.ANSI_RESET);
+		horario[1][4].setMateria(0, Cores.ANSI_BLACK + "MATE0154"+ Cores.ANSI_RESET);
 		
 		horario[0][2].setHoras(0);
 		horario[1][2].setHoras(0);
@@ -47,20 +47,20 @@ public class CasoTeste3 {
 		horario[1][4].setHoras(0);
 		
 		//linha 3 4
-		horario[2][0].setMateria(0, "ESTA0011");
-		horario[3][0].setMateria(0, "ESTA0011");
-		horario[2][2].setMateria(0, "ESTA0011");
-		horario[3][2].setMateria(0, "ESTA0011");
+		horario[2][0].setMateria(0, Cores.ANSI_BLACK + "ESTA0011"+ Cores.ANSI_RESET);
+		horario[3][0].setMateria(0, Cores.ANSI_BLACK + "ESTA0011"+ Cores.ANSI_RESET);
+		horario[2][2].setMateria(0, Cores.ANSI_BLACK + "ESTA0011"+ Cores.ANSI_RESET);
+		horario[3][2].setMateria(0, Cores.ANSI_BLACK + "ESTA0011"+ Cores.ANSI_RESET);
 		
 		horario[2][0].setHoras(0);
 		horario[3][0].setHoras(0);
 		horario[2][2].setHoras(0);
 		horario[3][2].setHoras(0);
 		
-		horario[2][1].setMateria(0, "COMP0409");
-		horario[3][1].setMateria(0, "COMP0409");
-		horario[2][3].setMateria(0, "COMP0409");
-		horario[3][3].setMateria(0, "COMP0409");
+		horario[2][1].setMateria(0, Cores.ANSI_BLACK + "COMP0409"+ Cores.ANSI_RESET);
+		horario[3][1].setMateria(0, Cores.ANSI_BLACK + "COMP0409"+ Cores.ANSI_RESET);
+		horario[2][3].setMateria(0, Cores.ANSI_BLACK + "COMP0409"+ Cores.ANSI_RESET);
+		horario[3][3].setMateria(0, Cores.ANSI_BLACK + "COMP0409"+ Cores.ANSI_RESET);
 
 		horario[2][1].setHoras(0);
 		horario[3][1].setHoras(0);
@@ -68,28 +68,28 @@ public class CasoTeste3 {
 		horario[3][3].setHoras(0);
 		
 		//linha 5 6
-		horario[4][1].setMateria(0, "COMP0412");
-		horario[5][1].setMateria(0, "COMP0412");
-		horario[4][3].setMateria(0, "COMP0412");
-		horario[5][3].setMateria(0, "COMP0412");
+		horario[4][1].setMateria(0, Cores.ANSI_BLACK + "COMP0412"+ Cores.ANSI_RESET);
+		horario[5][1].setMateria(0, Cores.ANSI_BLACK + "COMP0412"+ Cores.ANSI_RESET);
+		horario[4][3].setMateria(0, Cores.ANSI_BLACK + "COMP0412"+ Cores.ANSI_RESET);
+		horario[5][3].setMateria(0, Cores.ANSI_BLACK + "COMP0412"+ Cores.ANSI_RESET);
 		
 		horario[4][1].setHoras(0);
 		horario[5][1].setHoras(0);
 		horario[4][3].setHoras(0);
 		horario[5][3].setHoras(0);
 		
-		horario[4][0].setMateria(0, "COMP0415");
-		horario[5][0].setMateria(0, "COMP0415");
-		horario[4][2].setMateria(0, "COMP0415");
-		horario[5][2].setMateria(0, "COMP0415");
+		horario[4][0].setMateria(0, Cores.ANSI_BLACK + "COMP0415"+ Cores.ANSI_RESET);
+		horario[5][0].setMateria(0, Cores.ANSI_BLACK + "COMP0415"+ Cores.ANSI_RESET);
+		horario[4][2].setMateria(0, Cores.ANSI_BLACK + "COMP0415"+ Cores.ANSI_RESET);
+		horario[5][2].setMateria(0, Cores.ANSI_BLACK + "COMP0415"+ Cores.ANSI_RESET);
 		
 		horario[4][0].setHoras(0);
 		horario[5][0].setHoras(0);
 		horario[4][2].setHoras(0);
 		horario[5][2].setHoras(0);
 		
-		horario[4][4].setMateria(0, "COMP0417");
-		horario[5][4].setMateria(0, "COMP0417");
+		horario[4][4].setMateria(0, Cores.ANSI_BLACK + "COMP0417"+ Cores.ANSI_RESET);
+		horario[5][4].setMateria(0, Cores.ANSI_BLACK + "COMP0417"+ Cores.ANSI_RESET);
 		
 		horario[4][4].setHoras(0);
 		horario[5][4].setHoras(0);
@@ -122,39 +122,21 @@ public class CasoTeste3 {
 	public String toString()
 	{
 	    String es = new String();
-	    for(int i = 0; i < 10; i++)
-	        {
-	            for(int j = 0; j < 6; j++)
-	                {
-	                    es += "[";
-	                    es += horario[i][j].getHoras();
-	                    es += "]";
-	                }
-	            es += '\n';
-	        }
-	    System.out.println();
-	    System.out.println("Your matrix: ");
-	    return es;
-	}
-	
-	// Transforma a Matrix para string
-	// Baseado no tempo de cada horario
-	public String resultadoString()
-	{
-	    String es = new String();
 	    ArrayList<String> dia_semana = new ArrayList<String>();
-	    es += "     [ Segunda][  Terca ][ Quarta ][ Quinta ][ Sexta  ][ Sabado ]\n";
-	    dia_semana.add("13:00");
-	    dia_semana.add("14:00");
-	    dia_semana.add("15:00");
-	    dia_semana.add("16:00");
-	    dia_semana.add("17:00");
-	    dia_semana.add("18:00");
-	    dia_semana.add("19:00");
-	    dia_semana.add("20:00");
-	    dia_semana.add("21:00");
-	    dia_semana.add("22:00");
-
+	    es += Cores.ANSI_BLACK + "     [ Segunda][  Terca ][ Quarta ][ Quinta ][ Sexta  ][ Sabado ]\n" + Cores.ANSI_RESET;
+	    dia_semana.add(Cores.ANSI_BLACK + "13:00" + Cores.ANSI_RESET);
+	    dia_semana.add(Cores.ANSI_BLACK + "14:00" + Cores.ANSI_RESET);
+	    dia_semana.add(Cores.ANSI_BLACK + "15:00" + Cores.ANSI_RESET);
+	    dia_semana.add(Cores.ANSI_BLACK + "16:00" + Cores.ANSI_RESET);
+	    dia_semana.add(Cores.ANSI_BLACK + "17:00" + Cores.ANSI_RESET);
+	    dia_semana.add(Cores.ANSI_BLACK + "18:00" + Cores.ANSI_RESET);
+	    dia_semana.add(Cores.ANSI_BLACK + "19:00" + Cores.ANSI_RESET);
+	    dia_semana.add(Cores.ANSI_BLACK + "20:00" + Cores.ANSI_RESET);
+	    dia_semana.add(Cores.ANSI_BLACK + "21:00" + Cores.ANSI_RESET);
+	    dia_semana.add(Cores.ANSI_BLACK + "22:00" + Cores.ANSI_RESET);
+	    
+	    es += Cores.ANSI_BLACK;
+	    
 	    for(int i = 0; i < 10; i++)
 	        {
 	    		es += dia_semana.get(i);
@@ -162,7 +144,7 @@ public class CasoTeste3 {
 	                {
 	                    es += "[";
 	                    if (horario[i][j].getMateria() == null){
-	                    	es +="--------";
+	                    	es += Cores.ANSI_BLACK + "--------" + Cores.ANSI_RESET;
 	                    }else {
 	                    	es += horario[i][j].MateriaToString();
 	                    }
@@ -170,6 +152,7 @@ public class CasoTeste3 {
 	                }
 	            es += '\n';
 	        }
+	    es += Cores.ANSI_RESET;
 	    System.out.println();
 	    System.out.println("Seu Horário é: ");
 	    return es;

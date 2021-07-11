@@ -86,7 +86,7 @@ public class listaVariaveis {
 		this.caso3.add(Tupla);
 		Tupla = new Tupla(Tupla3[7],blocos[2]);
 		this.caso3.add(Tupla);
-		Tupla = new Tupla(Tupla3[7],blocos[1]);
+		Tupla = new Tupla(Tupla3[7],blocos[3]);
 		this.caso3.add(Tupla);
 		
 
@@ -96,14 +96,14 @@ public class listaVariaveis {
 	
 	//Gets da lista de cada caso de teste.
 	public ArrayList<Tupla> getCaso1() {
-		return caso1;//Collections.unmodifiableList(caso1);
+		return caso1;
 	}
 	public ArrayList<Tupla> getCaso2() {
-		return caso2;//Collections.unmodifiableList(caso2);
+		return caso2;
 	}
 	
 	public ArrayList<Tupla> getCaso3() {
-		return caso3;//Collections.unmodifiableList(caso3);
+		return caso3;
 	}
 
 }
