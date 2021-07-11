@@ -12,19 +12,26 @@ public class Horario {
 	public void setMateria(int i, String materia) {
 		this.materia[i] = materia;
 	}
-	
+	//Retorna as horas restantes do horário
 	public double getHoras() {
 		return horas;
 	}
+	
+	//retorna a pimeira matéria do horário
 	public String getMateria() {
 		return materia[0];
 		
 	}
+	
+	// Atribui a quantidade de horas
+	// disponiveis no horario
 	public void setHoras(double d) {
 			this.horas = d;
 	}
 	
-	public String MateriaToString() {
+	//Retorna as materias
+	// em formato de string
+	public String toString() {
 	    String es = new String();
 	    for (int i = 0; i< 2; i++) {
 	    	if (materia[i] != null) {

@@ -134,7 +134,7 @@ public class CasoTeste1 {
 	                    if (horario[i][j].getMateria() == null){
 	                    	es += Cores.ANSI_BLACK + "--------" + Cores.ANSI_RESET;
 	                    }else {
-	                    	es += horario[i][j].MateriaToString();
+	                    	es += horario[i][j].toString();
 	                    }
 	                    es += "]";
 	                }
