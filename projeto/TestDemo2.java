@@ -99,13 +99,6 @@ public class TestDemo2 {
 		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
 		
-		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().setAll();
-		solver.addCspListener(stepCounter);
-		stepCounter.reset();
-		System.out.println("Map Coloring (Backtracking MRV DEG) AC3 + MRV&DEG + LCV");
-		solution = solver.solve(csp);
-		solution.ifPresent(System.out::println);
-		System.out.println(stepCounter.getResults() + "\n");
 		
 		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(new AC3Strategy<>());
 		solver.addCspListener(stepCounter);

@@ -51,6 +51,7 @@ public class TestDemo3 {
 		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
 
+		/*
 		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(CspHeuristics.mrvDeg());
 		solver.addCspListener(stepCounter);
 		stepCounter.reset();
@@ -58,6 +59,7 @@ public class TestDemo3 {
 		solution = solver.solve(csp);
 		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
+		*/
 		
 		solver = new FlexibleBacktrackingSolver<>();
 		solver.addCspListener(stepCounter);
@@ -67,6 +69,7 @@ public class TestDemo3 {
 		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
 		
+		/*
 		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(CspHeuristics.deg());
 		solver.addCspListener(stepCounter);
 		stepCounter.reset();
@@ -74,6 +77,7 @@ public class TestDemo3 {
 		solution = solver.solve(csp);
 		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
+		*/
 		
 		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(CspHeuristics.mrv());
 		solver.addCspListener(stepCounter);
@@ -99,13 +103,6 @@ public class TestDemo3 {
 		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
 		
-		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().setAll();
-		solver.addCspListener(stepCounter);
-		stepCounter.reset();
-		System.out.println("Map Coloring (Backtracking MRV DEG) AC3 + MRV&DEG + LCV");
-		solution = solver.solve(csp);
-		solution.ifPresent(System.out::println);
-		System.out.println(stepCounter.getResults() + "\n");
 		
 		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(new AC3Strategy<>());
 		solver.addCspListener(stepCounter);

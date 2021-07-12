@@ -78,7 +78,6 @@ public class WeeklyMapCSP extends CSP<Variable, TuplaIntInt>{
 			for (int j = 0; j < horasVagas.size(); j++) {
 				if (j == horasVagas.size()-1) {
 					sabado = true;
-					System.out.println(sabado);
 					return sabado;
 				}
 				

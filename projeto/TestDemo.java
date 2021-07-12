@@ -36,9 +36,6 @@ public class TestDemo {
 		Optional<Assignment<Variable, TuplaIntInt>> solution;
 		
 		solver = new MinConflictsSolver<>(1000);
-		//solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().setAll();
-		//solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(CspHeuristics.mrvDeg());
-		//solver = new FlexibleBacktrackingSolver<>();
 		solver.addCspListener(stepCounter);
 		stepCounter.reset();
 		System.out.println("Map Coloring (Minimum Conflicts)");
@@ -102,13 +99,6 @@ public class TestDemo {
 		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
 		
-		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().setAll();
-		solver.addCspListener(stepCounter);
-		stepCounter.reset();
-		System.out.println("Map Coloring (Backtracking MRV DEG) AC3 + MRV&DEG + LCV");
-		solution = solver.solve(csp);
-		solution.ifPresent(System.out::println);
-		System.out.println(stepCounter.getResults() + "\n");
 		
 		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(new AC3Strategy<>());
 		solver.addCspListener(stepCounter);
