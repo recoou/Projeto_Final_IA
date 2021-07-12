@@ -20,8 +20,9 @@ public class demo {
 		CasoTeste2 teste2 = new CasoTeste2();
 		CasoTeste3 teste3 = new CasoTeste3();
 		
-		ArrayList<Double> horasLivres = teste2.horasVagas();
-		//System.out.println(horasLivres);
+		ArrayList<Double> horasLivres1 = teste1.horasVagas();
+		ArrayList<Double> horasLivres2 = teste2.horasVagas();
+		ArrayList<Double> horasLivres3 = teste3.horasVagas();
 		
 		listaVariaveis lista = new listaVariaveis();
 		
@@ -29,16 +30,18 @@ public class demo {
 		ArrayList<Tupla> list2 =  lista.getCaso2();
 		ArrayList<Tupla> list3 =  lista.getCaso3();
 		
-		Horario[][] horario = teste2.getHorario();
+		Horario[][] horario1 = teste1.getHorario();
+		Horario[][] horario2 = teste2.getHorario();
+		Horario[][] horario3 = teste3.getHorario();
 		
 		
-		CSP<Variable, TuplaIntInt> csp = new WeeklyMapCSP(list2, horario, horasLivres);
+		CSP<Variable, TuplaIntInt> csp = new WeeklyMapCSP(list1, horario1, horasLivres1);
 		
 		CspListener.StepCounter<Variable, TuplaIntInt> stepCounter = new CspListener.StepCounter<>();
 		CspSolver<Variable, TuplaIntInt> solver;
 		Optional<Assignment<Variable, TuplaIntInt>> solution;
 		
-		//solver = new MinConflictsSolver<>(500);
+		//solver = new MinConflictsSolver<>(1000);
 		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().setAll();
 		//solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(CspHeuristics.mrvDeg());
 		//solver = new FlexibleBacktrackingSolver<>();
@@ -48,6 +51,34 @@ public class demo {
 		solution = solver.solve(csp);
 		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
+		
+		try {
+			Assignment<Variable, TuplaIntInt> solucao = solution.get();
+			List<Variable> variaveis = solucao.getVariables();
+			for(Variable var : variaveis) {
+				int linha = solucao.getValue(var).getLinha();
+				int coluna = solucao.getValue(var).getColuna();
+				teste1.setMateria((int)linha/2, coluna, Cores.ANSI_BLUE + var.getName().substring(0, 8) + Cores.ANSI_RESET, linha%2);
+				}
+			System.out.println(teste1);
+		}
+		catch(NoSuchElementException e){
+			System.out.println("O PSR não possui solução \n");
+		}
+		
+		csp = new WeeklyMapCSP(list2, horario2, horasLivres2);
+		
+		//solver = new MinConflictsSolver<>(1000);
+		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().setAll();
+		//solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(CspHeuristics.mrvDeg());
+		//solver = new FlexibleBacktrackingSolver<>();
+		solver.addCspListener(stepCounter);
+		stepCounter.reset();
+		System.out.println("Map Coloring (Minimum Conflicts)");
+		solution = solver.solve(csp);
+		solution.ifPresent(System.out::println);
+		System.out.println(stepCounter.getResults() + "\n");
+		
 		try {
 			Assignment<Variable, TuplaIntInt> solucao = solution.get();
 			List<Variable> variaveis = solucao.getVariables();
@@ -59,44 +90,35 @@ public class demo {
 			System.out.println(teste2);
 		}
 		catch(NoSuchElementException e){
-			System.out.println("O PSR não possui solução");
+			System.out.println("O PSR não possui solução \n");
 		}
-	}
-}
-/*
-package aima.gui.demo.search;
-
-import aima.core.search.csp.*;
-import aima.core.search.csp.examples.MapCSP;
-
-import java.util.Optional;
-
-public class MapColoringCspDemo {
-	public static void main(String[] args) {
 		
-		solver = new FlexibleBacktrackingSolver<Variable, String>().setAll();
+		csp = new WeeklyMapCSP(list3, horario3, horasLivres3);
+		
+		//solver = new MinConflictsSolver<>(1000);
+		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().setAll();
+		//solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(CspHeuristics.mrvDeg());
+		//solver = new FlexibleBacktrackingSolver<>();
 		solver.addCspListener(stepCounter);
 		stepCounter.reset();
-		System.out.println("Map Coloring (Backtracking + MRV & DEG + LCV + AC3)");
-		solution = solver.solve(csp);
-		solution.ifPresent(System.out::println);
-		System.out.println(stepCounter.getResults() + "\n");
-
-		solver = new FlexibleBacktrackingSolver<Variable, String>().set(CspHeuristics.mrvDeg());
-		solver.addCspListener(stepCounter);
-		stepCounter.reset();
-		System.out.println("Map Coloring (Backtracking + MRV & DEG)");
+		System.out.println("Map Coloring (Minimum Conflicts)");
 		solution = solver.solve(csp);
 		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
 		
-		solver = new FlexibleBacktrackingSolver<>();
-		solver.addCspListener(stepCounter);
-		stepCounter.reset();
-		System.out.println("Map Coloring (Backtracking)");
-		solution = solver.solve(csp);
-		solution.ifPresent(System.out::println);
-		System.out.println(stepCounter.getResults() + "\n");
+		try {
+			Assignment<Variable, TuplaIntInt> solucao = solution.get();
+			List<Variable> variaveis = solucao.getVariables();
+			for(Variable var : variaveis) {
+				int linha = solucao.getValue(var).getLinha();
+				int coluna = solucao.getValue(var).getColuna();
+				teste3.setMateria((int)linha/2, coluna, Cores.ANSI_BLUE + var.getName().substring(0, 8) + Cores.ANSI_RESET, linha%2);
+				}
+			System.out.println(teste3);
+		}
+		catch(NoSuchElementException e){
+			System.out.println("O PSR não possui solução \n");
+		}
+		
 	}
 }
-*/
