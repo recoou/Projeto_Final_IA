@@ -6,7 +6,7 @@ import java.util.Optional;
 import aima.core.search.csp.Assignment;
 import aima.core.search.csp.CSP;
 import aima.core.search.csp.Variable;
-/*
+
 import aima.core.search.csp.CspHeuristics;
 import aima.core.search.csp.CspListener;
 import aima.core.search.csp.CspSolver;
@@ -14,9 +14,10 @@ import aima.core.search.csp.FlexibleBacktrackingSolver;
 import aima.core.search.csp.MinConflictsSolver;
 import aima.core.search.csp.inference.AC3Strategy;
 import aima.core.search.csp.inference.ForwardCheckingStrategy;
- */
+/*
 import aima.core.search.csp.solver.inference.*;
 import aima.core.search.csp.solver.*;
+*/
 
 /*
  * Classe de Suporte utilizada para comparar os algoritmos de solução
@@ -30,7 +31,7 @@ public class TestDemo2 {
 		
 		ArrayList<Double> horasLivres = teste2.horasVagas();
 		
-		listaVariaveis lista = new listaVariaveis();
+		ListaBlocos lista = new ListaBlocos();
 		
 		ArrayList<Tupla> list2 =  lista.getCaso2();
 		

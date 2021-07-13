@@ -7,17 +7,13 @@ import java.util.Optional;
 import aima.core.search.csp.Assignment;
 import aima.core.search.csp.CSP;
 import aima.core.search.csp.Variable;
-/*
+
 import aima.core.search.csp.CspHeuristics;
 import aima.core.search.csp.CspListener;
 import aima.core.search.csp.CspSolver;
 import aima.core.search.csp.FlexibleBacktrackingSolver;
-import aima.core.search.csp.MinConflictsSolver;
 import aima.core.search.csp.inference.AC3Strategy;
-import aima.core.search.csp.inference.ForwardCheckingStrategy;
- */
-import aima.core.search.csp.solver.inference.*;
-import aima.core.search.csp.solver.*;
+ 
 import java.util.NoSuchElementException;
 
 /*
@@ -40,7 +36,7 @@ public class demo {
 		ArrayList<Double> horasLivres2 = teste2.horasVagas();
 		ArrayList<Double> horasLivres3 = teste3.horasVagas();
 		
-		listaVariaveis lista = new listaVariaveis();
+		ListaBlocos lista = new ListaBlocos();
 		
 		ArrayList<Tupla> list1 =  lista.getCaso1();
 		ArrayList<Tupla> list2 =  lista.getCaso2();
@@ -60,7 +56,7 @@ public class demo {
 		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(new AC3Strategy<>()).set(CspHeuristics.mrv()).set(CspHeuristics.lcv());
 		solver.addCspListener(stepCounter);
 		stepCounter.reset();
-		System.out.println("Caso 1");
+		System.out.println("Caso 1 (AC3 + lcv + mrv)");
 		solution = solver.solve(csp);
 		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
@@ -86,7 +82,7 @@ public class demo {
 		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(new AC3Strategy<>()).set(CspHeuristics.lcv()).set(CspHeuristics.mrv());
 		solver.addCspListener(stepCounter);
 		stepCounter.reset();
-		System.out.println("Map Coloring (Minimum Conflicts)");
+		System.out.println("Caso 2 (AC3 + lcv + mrv)");
 		solution = solver.solve(csp);
 		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
@@ -112,7 +108,7 @@ public class demo {
 		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(new AC3Strategy<>()).set(CspHeuristics.mrv()).set(CspHeuristics.lcv());
 		solver.addCspListener(stepCounter);
 		stepCounter.reset();
-		System.out.println("Map Coloring (Minimum Conflicts)");
+		System.out.println("Caso 3 (AC3 + lcv + mrv)");
 		solution = solver.solve(csp);
 		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
