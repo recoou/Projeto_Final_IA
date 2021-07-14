@@ -91,7 +91,7 @@ public class ListaBlocos {
 		this.caso3.add(Tupla);
 		Tupla = new Tupla(Tupla3[7],blocos[2]);
 		this.caso3.add(Tupla);
-		Tupla = new Tupla(Tupla3[7],blocos[3]);
+		Tupla = new Tupla(Tupla3[7],blocos[5]);
 		this.caso3.add(Tupla);
 		
 
