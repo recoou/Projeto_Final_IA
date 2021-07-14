@@ -7,14 +7,9 @@ import java.util.Optional;
 import aima.core.search.csp.Assignment;
 import aima.core.search.csp.CSP;
 import aima.core.search.csp.Variable;
-
-import aima.core.search.csp.CspHeuristics;
-import aima.core.search.csp.CspListener;
-import aima.core.search.csp.CspSolver;
-import aima.core.search.csp.FlexibleBacktrackingSolver;
-import aima.core.search.csp.inference.AC3Strategy;
- 
 import java.util.NoSuchElementException;
+import aima.core.search.csp.solver.inference.*;
+import aima.core.search.csp.solver.*;
 
 /*
  * Classe Pricipal que simula os 3 casos definidos pelo projeto do 
@@ -36,7 +31,7 @@ public class demo {
 		ArrayList<Double> horasLivres2 = teste2.horasVagas();
 		ArrayList<Double> horasLivres3 = teste3.horasVagas();
 		
-		ListaBlocos lista = new ListaBlocos();
+		listaVariaveis lista = new listaVariaveis();
 		
 		ArrayList<Tupla> list1 =  lista.getCaso1();
 		ArrayList<Tupla> list2 =  lista.getCaso2();
@@ -56,9 +51,8 @@ public class demo {
 		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(new AC3Strategy<>()).set(CspHeuristics.mrv()).set(CspHeuristics.lcv());
 		solver.addCspListener(stepCounter);
 		stepCounter.reset();
-		System.out.println("Caso 1 (AC3 + lcv + mrv)");
+		System.out.println("Caso 1");
 		solution = solver.solve(csp);
-		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
 		
 		try {
@@ -82,9 +76,8 @@ public class demo {
 		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(new AC3Strategy<>()).set(CspHeuristics.lcv()).set(CspHeuristics.mrv());
 		solver.addCspListener(stepCounter);
 		stepCounter.reset();
-		System.out.println("Caso 2 (AC3 + lcv + mrv)");
+		System.out.println("Caso 2");
 		solution = solver.solve(csp);
-		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
 		
 		try {
@@ -108,9 +101,8 @@ public class demo {
 		solver = new FlexibleBacktrackingSolver<Variable, TuplaIntInt>().set(new AC3Strategy<>()).set(CspHeuristics.mrv()).set(CspHeuristics.lcv());
 		solver.addCspListener(stepCounter);
 		stepCounter.reset();
-		System.out.println("Caso 3 (AC3 + lcv + mrv)");
+		System.out.println("Caso 3");
 		solution = solver.solve(csp);
-		solution.ifPresent(System.out::println);
 		System.out.println(stepCounter.getResults() + "\n");
 		
 		try {
@@ -126,6 +118,5 @@ public class demo {
 		catch(NoSuchElementException e){
 			System.out.println("O PSR não possui solução \n");
 		}
-		
 	}
 }
