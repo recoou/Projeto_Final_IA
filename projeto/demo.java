@@ -31,7 +31,7 @@ public class demo {
 		ArrayList<Double> horasLivres2 = teste2.horasVagas();
 		ArrayList<Double> horasLivres3 = teste3.horasVagas();
 		
-		listaVariaveis lista = new listaVariaveis();
+		ListaBlocos lista = new ListaBlocos();
 		
 		ArrayList<Tupla> list1 =  lista.getCaso1();
 		ArrayList<Tupla> list2 =  lista.getCaso2();
